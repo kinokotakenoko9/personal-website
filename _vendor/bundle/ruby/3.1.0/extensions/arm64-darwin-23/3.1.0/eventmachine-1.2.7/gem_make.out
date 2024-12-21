@@ -1,0 +1,17 @@
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/Users/kinokotakenoko/.rbenv/versions/3.1.4/bin/ruby -I /Users/kinokotakenoko/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20241221-33302-h1i9x sitelibdir\=./.gem.20241221-33302-h1i9x clean
+
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20241221-33302-h1i9x sitelibdir\=./.gem.20241221-33302-h1i9x
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.1'
+
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20241221-33302-h1i9x sitelibdir\=./.gem.20241221-33302-h1i9x install
+/usr/bin/install -c -m 0755 fastfilereaderext.bundle ./.gem.20241221-33302-h1i9x

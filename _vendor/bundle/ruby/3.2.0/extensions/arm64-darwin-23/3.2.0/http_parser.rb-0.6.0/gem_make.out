@@ -1,0 +1,20 @@
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/Users/kinokotakenoko/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20241221-92039-88dpzl sitelibdir\=./.gem.20241221-92039-88dpzl clean
+
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20241221-92039-88dpzl sitelibdir\=./.gem.20241221-92039-88dpzl
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20241221-92039-88dpzl sitelibdir\=./.gem.20241221-92039-88dpzl install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20241221-92039-88dpzl
+
+current directory: /Users/kinokotakenoko/Documents/repos/saved/resume-template/_vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20241221-92039-88dpzl sitelibdir\=./.gem.20241221-92039-88dpzl clean
