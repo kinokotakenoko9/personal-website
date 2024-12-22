@@ -2,8 +2,8 @@ from flask import Flask, jsonify, redirect, render_template, url_for
 from flask_dance.contrib.github import github
 from flask_login import logout_user, login_required
 
-from app.models import db, login_manager
-from app.oauth import github_blueprint
+from models import db, login_manager
+from oauth import github_blueprint
 
 
 app = Flask(__name__)
