@@ -4,13 +4,14 @@ from flask_dance.contrib.discord import discord
 from flask_login import logout_user, login_required
 
 from models import db, login_manager
-from oauth import github_blueprint
+from oauth import github_blueprint, discord_blueprint
 
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///./users.db"
 app.register_blueprint(github_blueprint, url_prefix="/login")
+app.register_blueprint(discord_blueprint, url_prefix="/login")
 
 db.init_app(app)
 login_manager.init_app(app)
