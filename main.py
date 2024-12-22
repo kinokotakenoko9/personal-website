@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, redirect, render_template, url_for
 from flask_dance.contrib.github import github
+from flask_dance.contrib.discord import discord
 from flask_login import logout_user, login_required
 
 from models import db, login_manager
@@ -29,13 +30,20 @@ def homepage():
 
 
 @app.route("/github")
-def login():
+def login_github():
     if not github.authorized:
         return redirect(url_for("github.login"))
     res = github.get("/user")
     username = res.json()["login"]
     return f"You are @{username} on GitHub"
 
+@app.route("/discord")
+def login_discord():
+    if not discord.authorized:
+        return redirect(url_for("discord.login"))
+    res = discord.get("/user")
+    username = res.json()["login"]
+    return f"You are @{username} on Discord"
 
 @app.route("/logout")
 @login_required
