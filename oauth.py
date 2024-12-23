@@ -51,7 +51,7 @@ def github_logged_in(blueprint, token):
 
 @oauth_authorized.connect_via(discord_blueprint)
 def discord_logged_in(blueprint, token):
-    info = discord.get("/user/@me")
+    info = discord.get("/users/@me")
     if info.ok:
         account_info = info.json()
         username = account_info["username"]
