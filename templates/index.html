@@ -59,7 +59,7 @@
   <section style="left:0;right:0;z-index:9999;background:transparent" class="position-absolute d-flex flex-row ">
     <div style="text-align:center;" class="d-flex flex-row">
       {% if current_user.is_authenticated %}
-        <span>{{current_user.username}}</span>
+        <span class="d-flex flex-column justify-content-center m-2">{{current_user.username}}</span>
         <br><br>
         <a href="{{url_for('logout')}}" class="btn btn-danger">Logout</a>
       {% else %}
