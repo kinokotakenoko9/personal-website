@@ -54,7 +54,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <header id="header" class="header d-flex flex-column justify-content-center" style="z-index: 9999;">
+  <header id="header" class="header d-flex flex-column justify-content-center" style="z-index: 999;">
 
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
@@ -71,12 +71,12 @@
 
   </header>
 
-  <section style="left:0;right:0;z-index:999;background:transparent;width:50%;" class="position-absolute d-flex flex-row ">
+  <section style="left:0;right:0;z-index:9999;background:transparent;width:50%;" class="position-absolute d-flex flex-row ">
     <div style="text-align:center;" class="d-flex flex-row">
       {% if current_user.is_authenticated %}
         <span class="d-flex flex-column justify-content-center m-2">{{current_user.username}}</span>
         <br><br>
-        <a href="{{url_for('logout')}}" class="btn btn-danger">Logout</a>
+        <a href="{{url_for('logout')}}" class="btn btn-danger m-2">Logout</a>
       {% else %}
         <!-- GitHub button starts here -->
         <a href="{{url_for('login_github')}}"  class="btn btn-secondary m-2">
