@@ -10,8 +10,8 @@ from oauth import github_blueprint, discord_blueprint
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///./users.db"
-app.register_blueprint(github_blueprint, url_prefix="/login")
-app.register_blueprint(discord_blueprint, url_prefix="/login")
+app.register_blueprint(github_blueprint, url_prefix="/login_github")
+app.register_blueprint(discord_blueprint, url_prefix="/login_discord")
 
 db.init_app(app)
 login_manager.init_app(app)
@@ -42,8 +42,8 @@ def login_github():
 def login_discord():
     if not discord.authorized:
         return redirect(url_for("discord.login"))
-    res = discord.get("/user")
-    username = res.json()["login"]
+    res = discord.get("/users/@me")
+    username = res.json()["username"]
     return f"You are @{username} on Discord"
 
 @app.route("/logout")
