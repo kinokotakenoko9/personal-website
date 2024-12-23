@@ -42,7 +42,7 @@ def login_github():
 def login_discord():
     if not discord.authorized:
         return redirect(url_for("discord.login"))
-    res = discord.get("/users/@me")
+    res = discord.get("/api/users/@me")
     username = res.json()["username"]
     return f"You are @{username} on Discord"
 
