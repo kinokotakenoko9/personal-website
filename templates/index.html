@@ -91,11 +91,22 @@
         </a>
         <!-- Discord button ends here -->
       {% endif %}
+      <!-- Like button -->
+      <div class="like-container m-2">
+        <button 
+            id="like-btn" 
+            class="btn btn-primary" 
+            {% if current_user.is_authenticated %} 
+                enabled 
+            {% else %} 
+                disabled 
+            {% endif %}>
+            Like
+        </button>
+        <p id="like-count" class="m-2">0</p>
+        <!-- Like button -->
     </div>
-    <div class="like-container">
-      <button id="like-btn" class="btn btn-primary">Like</button>
-      <p id="like-count">Total Likes: 0</p>
-    </div>
+  </div>
   </section>
 
   <main class="main">
