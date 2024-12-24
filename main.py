@@ -77,4 +77,4 @@ def get_likes():
     return jsonify({"total_likes": total_likes})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=80, host="0.0.0.0")
