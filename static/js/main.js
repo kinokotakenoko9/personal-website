@@ -226,6 +226,7 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  // like btn
   const likeBtn = document.getElementById("like-btn");
   const likeCount = document.getElementById("like-count");
 
@@ -233,7 +234,7 @@
   fetch("/likes")
     .then(response => response.json())
     .then(data => {
-      likeCount.textContent = `Total Likes: ${data.total_likes}`;
+      likeCount.textContent = `${data.total_likes}`;
     });
 
   // Handle like button click
@@ -242,17 +243,14 @@
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          if (data.action === "liked") {
-            likeBtn.textContent = "Unlike";
-          } else {
-            likeBtn.textContent = "Like";
-          }
+          // Update button text based on the action
+          likeBtn.textContent = data.action === "liked" ? "Unlike" : "Like";
 
           // Update total likes
           fetch("/likes")
             .then(response => response.json())
             .then(data => {
-              likeCount.textContent = `Total Likes: ${data.total_likes}`;
+              likeCount.textContent = `${data.total_likes}`;
             });
         }
       });

@@ -97,7 +97,11 @@
               {% if not current_user.is_authenticated %} 
                   disabled 
               {% endif %}>
-              Like
+              {% if user_liked %}
+                  Unlike
+              {% else %}
+                  Like
+              {% endif %}
           </button>
           <p id="like-count" class="mb-0">0</p>
       </div>

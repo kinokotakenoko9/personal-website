@@ -27,7 +27,10 @@ def ping():
 
 @app.route("/")
 def homepage():
-    return render_template("index.html")
+    user_liked = False
+    if current_user.is_authenticated:
+        user_liked = Like.query.filter_by(user_id=current_user.id).first() is not None
+    return render_template("index.html", user_liked=user_liked)
 
 
 @app.route("/github")
