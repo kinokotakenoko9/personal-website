@@ -72,41 +72,36 @@
   </header>
 
   <section style="left:0;right:0;z-index:9999;background:transparent;width:50%;padding:0;" class="position-absolute d-flex flex-row ">
-    <div style="text-align:center;" class="d-flex flex-row">
+    <div style="text-align:center;" class="d-flex flex-row align-items-start">
       {% if current_user.is_authenticated %}
-        <span class="d-flex flex-column justify-content-center m-2">{{current_user.username}}</span>
-        <br><br>
-        <a href="{{url_for('logout')}}" class="btn btn-danger m-2">Logout</a>
+          <span class="d-flex flex-column justify-content-center m-2">{{ current_user.username }}</span>
+          <br><br>
+          <a href="{{ url_for('logout') }}" class="btn btn-danger m-2">Logout</a>
       {% else %}
-        <!-- GitHub button starts here -->
-        <a href="{{url_for('login_github')}}"  class="btn btn-secondary m-2">
-          <i class="fa fa-github fa-fw"></i>
-          <span>Login with GitHub</span>
-        </a>
-        <!-- GitHub button ends here -->
-        <!-- Discord button starts here -->
-        <a href="{{url_for('login_discord')}}"  class="btn btn-secondary m-2">
-          <i class="fa fa-github fa-fw"></i>
-          <span>Login with Discord</span>
-        </a>
-        <!-- Discord button ends here -->
+          <!-- GitHub button -->
+          <a href="{{ url_for('login_github') }}" class="btn btn-secondary m-2">
+              <i class="fa fa-github fa-fw"></i>
+              <span>Login with GitHub</span>
+          </a>
+          <!-- Discord button -->
+          <a href="{{ url_for('login_discord') }}" class="btn btn-secondary m-2">
+              <i class="fa fa-github fa-fw"></i>
+              <span>Login with Discord</span>
+          </a>
       {% endif %}
       <!-- Like button -->
-      <div class="like-container m-2">
-        <button 
-            id="like-btn" 
-            class="btn btn-primary" 
-            {% if current_user.is_authenticated %} 
-                enabled 
-            {% else %} 
-                disabled 
-            {% endif %}>
-            Like
-        </button>
-        <p id="like-count" class="m-2">0</p>
-        <!-- Like button -->
+      <div class="like-container d-flex align-items-center m-2">
+          <button 
+              id="like-btn" 
+              class="btn btn-primary me-2" 
+              {% if not current_user.is_authenticated %} 
+                  disabled 
+              {% endif %}>
+              Like
+          </button>
+          <p id="like-count" class="mb-0">0</p>
+      </div>
     </div>
-  </div>
   </section>
 
   <main class="main">
